@@ -111,6 +111,7 @@ blockquote::after {
 
 
 /* footer custom */
+
 section {
     padding: 60px 0;
 }
@@ -125,11 +126,13 @@ section .section-title {
     background: #007b5e !important;
 }
 #footer h5{
-	padding-left: 10px;
+		margin-left: 2rem;
+		padding-left: 10px;
     border-left: 3px solid #eeeeee;
     padding-bottom: 6px;
     margin-bottom: 20px;
     color:#ffffff;
+		font-size: 25px;
 }
 #footer a {
     color: #ffffff;
@@ -175,6 +178,9 @@ section .section-title {
 #footer ul.quick-links li:hover a i {
     font-weight: 700;
 }
+#footer .list-unstyled{
+	margin-left: 0rem;
+}
 
 @media (max-width:767px){
 	#footer h5 {
@@ -183,7 +189,7 @@ section .section-title {
     padding-bottom: 0px;
     margin-bottom: 10px;
 }
-}
+} 
 
 /* -------------------------------------------------------------------------- */
 
