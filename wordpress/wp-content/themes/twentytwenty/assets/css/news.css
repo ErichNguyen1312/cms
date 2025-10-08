@@ -1,0 +1,99 @@
+/* css custom for item post */
+.news-item-wrapper {
+  background: #fff;
+  padding: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+
+/* Bố cục 2 cột */
+.news-item {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 20px;
+}
+
+/* Cột trái: ảnh */
+.news-left {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.news-right {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+/* Ảnh */
+.news-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover .news-img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Ngày tháng */
+.news-datebox {
+  float: left;
+  width: 70px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.news-date {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0046ad;
+}
+
+.news-month {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Tiêu đề và mô tả */
+.news-title {
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.news-title:hover {
+  color: #0046ad;
+}
+
+.news-category {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.news-desc {
+  margin-top: 10px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+  }
+  .news-left, .news-right {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .news-datebox {
+    float: none;
+    margin: 0 auto 10px;
+  }
+}

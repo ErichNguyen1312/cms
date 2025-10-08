@@ -15,32 +15,34 @@
 
 ?>
 <div class="container">
-	<article class="post">
-		<div class="post-image">
-			<a href="<?php the_permalink(); ?>">
-				<?php if (has_post_thumbnail()) : ?>
-					<?php the_post_thumbnail('medium'); ?>
-				<?php else : ?>
-					<img src="https://via.placeholder.com/400x250" alt="No image">
-				<?php endif; ?>
-			</a>
-		</div>
+	<div class="news-item-wrapper my-5">
+		<div class="news-item">
 
-		<div class="post-content">
-			<div class="post-date">
-				<span class="day"><?php echo get_the_date('d'); ?></span>
-				<span class="month-year"><?php echo 'Tháng ' . get_the_date('m') . '<br>' . get_the_date('Y'); ?></span>
+			<!-- Thumbnail -->
+			<div class="news-left">
+				<a href="<?php the_permalink(); ?>">
+					<?php if (has_post_thumbnail()) : ?>
+						<?php the_post_thumbnail('large', ['class' => 'news-img']); ?>
+					<?php else : ?>
+						<img src="https://via.placeholder.com/500x300" alt="<?php the_title(); ?>" class="news-img">
+					<?php endif; ?>
+				</a>
 			</div>
-			<div class="post-info">
-				<h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<p class="category">
-					Categories:
-					<span><?php the_category(', '); ?></span>
-				</p>
-				<p class="description"><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p>
+
+			<!-- Content -->
+			<div class="news-right">
+				<div class="news-datebox">
+					<div class="news-date"><?php echo get_the_date('d'); ?></div>
+					<div class="news-month"><?php echo 'Tháng ' . get_the_date('m') . '<br>' . get_the_date('Y'); ?></div>
+				</div>
+
+				<div class="news-info">
+					<a href="<?php the_permalink(); ?>" class="news-title"><?php the_title(); ?></a>
+					<div class="news-category">Categories: <strong><?php the_category(', '); ?></strong></div>
+					<p class="news-desc"><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p>
+				</div>
 			</div>
+
 		</div>
-	</article>
-
-
+	</div>
 </div>
