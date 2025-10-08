@@ -15,34 +15,37 @@
 
 ?>
 <div class="container">
-	<div class="news-item-wrapper my-5">
-		<div class="news-item">
+	<div class="news-item row align-items-center mb-4 p-3 bg-white rounded">
 
-			<!-- Thumbnail -->
-			<div class="news-left">
-				<a href="<?php the_permalink(); ?>">
-					<?php if (has_post_thumbnail()) : ?>
-						<?php the_post_thumbnail('large', ['class' => 'news-img']); ?>
-					<?php else : ?>
-						<img src="https://via.placeholder.com/500x300" alt="<?php the_title(); ?>" class="news-img">
-					<?php endif; ?>
-				</a>
-			</div>
-
-			<!-- Content -->
-			<div class="news-right">
-				<div class="news-datebox">
-					<div class="news-date"><?php echo get_the_date('d'); ?></div>
-					<div class="news-month"><?php echo 'Tháng ' . get_the_date('m') . '<br>' . get_the_date('Y'); ?></div>
-				</div>
-
-				<div class="news-info">
-					<a href="<?php the_permalink(); ?>" class="news-title"><?php the_title(); ?></a>
-					<div class="news-category">Categories: <strong><?php the_category(', '); ?></strong></div>
-					<p class="news-desc"><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p>
-				</div>
-			</div>
-
+		<div class="col-md-5">
+			<a href="<?php the_permalink(); ?>" class="d-block overflow-hidden rounded">
+				<?php if (has_post_thumbnail()) : ?>
+					<?php the_post_thumbnail('medium_large', ['class' => 'img-fluid w-100 h-100']); ?>
+				<?php else : ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/default.jpg" class="img-fluid" alt="No image">
+				<?php endif; ?>
+			</a>
 		</div>
+
+		<div class="col-md-7">
+			<div class="row no-gutters">
+				<div class="col-3 text-center text-primary align-self-center">
+					<div class="display-4 mb-0"><?php echo get_the_date('d'); ?></div>
+					<small class="text-muted d-block">
+						THÁNG <?php echo get_the_date('m'); ?><br><?php echo get_the_date('Y'); ?>
+					</small>
+				</div>
+
+				<div class="post-info col-9 pl-3">
+					<h2 class="font-weight-bold mb-2">
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</h2>
+					<p class="text-muted mb-1 small"><strong>Categories:</strong> <?php the_category(', '); ?></p>
+					<p class="text-muted mb-0"><?php echo wp_trim_words(get_the_excerpt(), 25, '...'); ?></p>
+				</div>
+			</div>
+		</div>
+
 	</div>
+
 </div>
