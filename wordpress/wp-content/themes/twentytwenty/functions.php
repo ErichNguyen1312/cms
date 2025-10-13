@@ -56,6 +56,9 @@ function custom_header_styles()
 }
 add_action('wp_enqueue_scripts', 'custom_header_styles');
 
+//search page custom 
+
+
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
