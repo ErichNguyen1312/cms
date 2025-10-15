@@ -47,7 +47,9 @@
 
         <a href="<?php echo esc_url(home_url('/?s=')); ?>" class="icon"><i class="fa fa-search"></i>
         </a>
-        <a href="<?php echo home_url('/my-account'); ?>" class="icon"><i class="fa fa-user"></i>
+        <a class="icon"><i class="fa fa-user"></i>
+
+
         </a>
       </div>
 
