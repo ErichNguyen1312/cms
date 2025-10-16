@@ -190,27 +190,156 @@ section .section-title {
 }
 } 
 
+/* single content-post */
+.single-content-post {
+	max-width: 90%;
+}
+
+
+
+
+/* ===== FEATURED POSTS (Bài viết nổi bật) ===== */
+.featured-posts {
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.featured-posts .card-header {
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+.featured-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-thumb:hover img {
+  transform: scale(1.03);
+}
+
+.featured-title a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.featured-title a:hover {
+  text-decoration: underline;
+}
+
+.featured-excerpt {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .featured-title {
+    font-size: 0.95rem;
+  }
+
+  .featured-excerpt {
+    font-size: 0.85rem;
+  }
+}
+
+/* Search results */
+.search-item h5 a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Comments */
+.comment-widget .comment-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.comment-widget .comment-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-page .row > div {
+    margin-bottom: 20px;
+  }
+}
 
 /* search result custom */
-
-.search-form-page {
-    background-color: #fcfaf5 !important;
+.search-page {
+  font-family: "Segoe UI", sans-serif;
+	font-size: 2rem;
 }
 
-.search-results-container {
-    max-width: 800px;
-    margin: 4rem auto; /* Thêm khoảng cách trên dưới */
+/* Center column - Search Results */
+.search-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
 }
 
-.no-results-message h2 {
-    font-weight: 400;
-    font-size: 1.75rem;
+.date-block .date-inner {
+  border: 1px solid #e0e0e0;
+  background: #f7f9fb;
+  display: inline-block;
+  width: 100%;
 }
 
-.search-query {
-    font-weight: 700;
+.date-block h4 {
+  font-size: 1.5rem;
+  color: #007bff;
 }
 
+.date-block small {
+  font-weight: 500;
+}
+
+.search-item h6 a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Featured + Comments */
+.highlight-posts img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.comment-widget .comment-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.comment-widget .comment-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-item .col-md-2 {
+    display: none; /* Ẩn cột ngày trên mobile */
+  }
+  .search-item img {
+    height: 150px;
+  }
+}
 /* Tùy chỉnh form tìm kiếm */
 .custom-search-form {
     background-color: #fff;
@@ -290,6 +419,71 @@ section .section-title {
     border-bottom-style: solid;
 }
 
+
+/* ===== SEARCH PAGE LAYOUT ===== */
+
+.search-page {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.not-found h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.search-form-wrapper {
+  background-color: #fbf8ef; /* màu nền be nhẹ */
+  border-top: 1px solid #f1eede;
+  border-bottom: 1px solid #f1eede;
+}
+
+.search-form .input-group {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.search-form .form-control {
+  border: none !important;
+  font-size: 1rem;
+  height: 58px;
+  box-shadow: none !important;
+}
+
+.search-form .input-group-text {
+  border: none !important;
+  background-color: #fff;
+  font-size: 1.2rem;
+}
+
+.search-form .btn-success {
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.search-form .btn-success:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-form .input-group {
+    flex-direction: column;
+  }
+
+  .search-form .btn-success {
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    margin-top: 10px;
+  }
+
+  .search-form .form-control {
+    border-radius: 8px 8px 0 0;
+  }
+}
 
 
 

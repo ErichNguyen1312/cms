@@ -1,56 +1,154 @@
-<?php
+<?php get_header(); ?>
 
-/**
- * File template search result
- */
+<div class="container-fluid single-content-post mt-5 mb-5 search-page">
+  <!-- Search header -->
 
-get_header(); // Gọi file header.php
-?>
 
-<div class="container search-results-container py-5">
 
-  <?php if (have_posts()) : ?>
+  <div class="row">
+    <!-- ===== CỘT TRÁI: BÀI VIẾT NỔI BẬT ===== -->
+    <aside class="col-md-3 mb-4">
+      <div class="card featured-posts mb-4 border-0">
+        <div class="card-header bg-white font-weight-bold text-primary border-0">
+          Bài viết nổi bật
+        </div>
+        <div class="card-body">
+          <?php
+          // Lấy 3 bài viết mới nhất
+          $featured = new WP_Query(array(
+            'posts_per_page' => 3,
+            'ignore_sticky_posts' => 1
+          ));
 
-    <header class="page-header text-center mb-5">
-      <h1 class="page-title">
+          if ($featured->have_posts()) :
+            while ($featured->have_posts()) : $featured->the_post(); ?>
+          <div class="featured-item mb-4">
+            <a href="<?php the_permalink(); ?>" class="featured-thumb d-block mb-2">
+              <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail('large', ['class' => 'img-fluid rounded']); ?>
+              <?php else : ?>
+              <img src="https://via.placeholder.com/600x400?text=No+Image" class="img-fluid rounded"
+                alt="<?php the_title(); ?>">
+              <?php endif; ?>
+            </a>
+
+            <p class="featured-excerpt mb-1">
+              <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+            </p>
+          </div>
+          <?php endwhile;
+            wp_reset_postdata();
+          endif;
+          ?>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== CỘT GIỮA: KẾT QUẢ TÌM KIẾM ===== -->
+    <main class="col-md-6 mb-4">
+
+      <div class="search-results bg-white shadow-sm p-3 rounded text-center ">
+
+        <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+        <h2 class="font-weight-bold">
+          <span class="text-danger">Search:</span> "<?php echo get_search_query(); ?>"
+        </h2>
+        <div class="search-item row no-gutters align-items-center mb-4 pb-3 border-bottom">
+          <!-- Thumbnail -->
+          <div class="col-md-4">
+            <a href="<?php the_permalink(); ?>">
+              <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail('medium', ['class' => 'img-fluid rounded']); ?>
+              <?php else : ?>
+              <img src="https://via.placeholder.com/300x200" class="img-fluid rounded" alt="No image">
+              <?php endif; ?>
+            </a>
+          </div>
+
+          <!-- Date -->
+          <div class="col-md-2 text-center date-block">
+            <div class="date-inner bg-light rounded py-3">
+              <h4 class="mb-0 font-weight-bold text-primary"><?php echo get_the_date('d'); ?></h4>
+              <small class="text-uppercase text-muted">Tháng:<?php echo get_the_date('m'); ?></small>
+            </div>
+          </div>
+
+          <!-- Post Info -->
+          <div class="col-md-6 pl-3">
+            <h6 class="font-weight-bold">
+              <a href="<?php the_permalink(); ?>" class="text-dark">
+                <?php the_title(); ?>
+              </a>
+            </h6>
+            <p class="text-secondary small mb-0">
+              <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+            </p>
+          </div>
+        </div>
+        <?php endwhile; ?>
+        <div class="pagination">
+          <?php the_posts_pagination(); ?>
+        </div>
+        <?php else : ?>
+
+        <!-- Không có kết quả -->
+        <div class="not-found my-5">
+          <h4 class="font-weight-bold">
+            <span class="text-danger">Search:</span> "<?php echo get_search_query(); ?>"
+          </h4>
+          <p class="text-muted">
+            We could not find any results for your search. You can give it<br>
+            another try through the search form below.
+          </p>
+        </div>
+
+        <!-- Form tìm kiếm -->
+        <div class="search-form-wrapper py-5">
+          <div class="container ">
+            <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search-form">
+              <div class="input-group input-group-lg mx-auto shadow-sm" style="max-width:600px;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white border-right-0">
+                    <i class="fa fa-search text-muted"></i>
+                  </span>
+                </div>
+                <input type="search" class="form-control border-left-0" placeholder="Search topics or keywords"
+                  value="<?php echo get_search_query(); ?>" name="s">
+                <div class="input-group-append">
+                  <button class="btn btn-success px-4" type="submit">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <?php endif; ?>
+      </div>
+    </main>
+
+    <!-- ===== CỘT PHẢI: BÌNH LUẬN ===== -->
+    <aside class="col-md-3 mb-4">
+      <div class="comment-widget p-3 shadow-sm bg-white rounded">
+        <h5 class="mb-3 font-weight-bold text-primary border-bottom pb-2">Bình luận mới nhất</h5>
         <?php
-        /* translators: %s: search query. */
-        printf(esc_html__('Search Results for: %s', 'your-theme-domain'), '<span class="search-query">"' . get_search_query() . '"</span>');
-        ?>
-      </h1>
-    </header><?php
-              while (have_posts()) :
-                the_post();
+        $recent_comments = get_comments(array(
+          'number' => 3,
+          'status' => 'approve',
+        ));
+        if ($recent_comments) :
+          foreach ($recent_comments as $comment) : ?>
+        <div class="comment-item mb-3">
+          <strong><?php echo $comment->comment_author; ?></strong>
+          <p class="mb-1 text-secondary small"><?php echo wp_trim_words($comment->comment_content, 15, '...'); ?></p>
+          <a href="<?php echo get_comment_link($comment); ?>" class="small text-primary">Xem bài viết</a>
+        </div>
+        <?php endforeach;
+        else : ?>
+        <p>Chưa có bình luận nào.</p>
+        <?php endif; ?>
+      </div>
+    </aside>
+  </div>
+</div>
 
-                get_template_part('template-parts/content', 'excerpt');
-              ?>
-
-    <?php
-              endwhile;
-
-              the_posts_navigation(); // Hiển thị phân trang (Next/Previous)
-    ?>
-
-  <?php else : ?>
-
-    <div class="no-results-message text-center mb-5">
-      <h2>
-        <span class="text-danger">Search:</span>
-        <span class="search-query">"<?php echo esc_html(get_search_query()); ?>"</span>
-      </h2>
-      <p class="lead text-muted">
-        <?php esc_html_e('We could not find any results for your search. You can give it another try through the search form below.', 'your-theme-domain'); ?>
-      </p>
-    </div>
-
-    <div class="search-form-page">
-      <?php
-      get_search_form();
-      ?>
-    </div>
-
-
-  <?php endif; ?>
-
-</div><?php
-      get_footer();
+<?php get_footer(); ?>

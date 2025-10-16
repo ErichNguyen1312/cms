@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Link CSS riêng cho trang single -->
-<div class="container my-5">
+<div class="container-fluid my-5 single-content-post">
   <div class="row">
 
     <!-- SIDEBAR TRÁI (CATEGORIES) -->
