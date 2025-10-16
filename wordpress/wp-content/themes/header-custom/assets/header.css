@@ -1,81 +1,77 @@
-
-.site-header-custom {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
+/* ===== HEADER CUSTOM STYLE ===== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  
 }
 
-.logo-text {
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
+.navbar {
+  padding: 0.75rem 1.25rem;
 }
 
-.main-menu .nav li {
-    display: inline-block;
-    margin-right: 20px;
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #212529;
 }
 
-.main-menu .nav li a {
-    text-decoration: none;
-    color: #333;
+.navbar-nav .nav-item {
+  margin: 0 0.5rem;
 }
 
-/* ---- Icons ---- */
-
-.header-icons .icon {
-    margin-left: 15px;
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
+.navbar-nav .nav-link {
+  font-size: 0.95rem;
+  color: #333 !important;
+  transition: color 0.2s ease;
 }
 
-/* ---- Mobile ---- */
-.mobile-toggle {
-    background: none;
-    border: none;
-    font-size: 22px;
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
 }
 
-.mobile-menu {
-    display: none;
-    background: #fff;
-    border-top: 1px solid #eee;
-    padding: 10px 20px;
+.navbar .form-inline input[type="search"] {
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
 
-.mobile-menu.open {
-    display: block;
+.navbar .btn-sm {
+  font-size: 0.85rem;
+  border-radius: 4px;
 }
 
-.mobile-nav li {
-    list-style: none;
-    padding: 8px 0;
+/* Icon user và search */
+.nav-item i {
+  font-size: 2rem;
+  vertical-align: middle;
 }
 
-.mobile-nav li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
+/* Dropdown user */
+.dropdown-menu {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Search Form Inline */
-.search-form {
-    display: flex;
-    align-items: center;
+.dropdown-item:hover {
+  background: #f8f9fa;
 }
 
-.search-form .search-field {
-    border: 1px solid #ccc;
-    padding: 6px 10px;
-    border-radius: 3px 0 0 3px;
-}
+#menu-cms >li >a{
+  font-size: 2rem;
+  color: #333;
+} 
 
-.search-form .search-submit {
-    border: 1px solid #ccc;
-    border-left: none;
-    padding: 6px 15px;
-    background: #f5f5f5;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
+/* Responsive */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+  .form-inline {
+    justify-content: center;
+    width: 100%;
+  }
 }

@@ -108,7 +108,17 @@ blockquote::before,
 blockquote::after {
 	content: "";
 }
-
+/* common size  */
+.title-lg {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.text-md {
+  font-size: 1.1rem;
+}
+.text-sm {
+  font-size: 0.9rem;
+}
 /* footer custom */
 
 section {
