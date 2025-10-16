@@ -50,10 +50,11 @@
       <div class="search-results bg-white shadow-sm p-3 rounded text-center ">
 
         <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
         <h2 class="font-weight-bold">
           <span class="text-danger">Search:</span> "<?php echo get_search_query(); ?>"
         </h2>
+        <?php while (have_posts()) : the_post(); ?>
+
         <div class="search-item row no-gutters align-items-center mb-4 pb-3 border-bottom">
           <!-- Thumbnail -->
           <div class="col-md-4">
@@ -124,6 +125,8 @@
         </div>
         <?php endif; ?>
       </div>
+
+
     </main>
 
     <!-- ===== CỘT PHẢI: BÌNH LUẬN ===== -->
@@ -148,6 +151,38 @@
         <?php endif; ?>
       </div>
     </aside>
+  </div>
+
+  <!-- ===== Lastest News ===== -->
+
+
+  <div class="row">
+    <section class="latest-news my-5 px-4">
+      <h3 class="mb-4 font-weight-bold">Latest News</h3>
+      <div class="timeline">
+        <?php
+        $latest_posts = new WP_Query(['posts_per_page' => 3]);
+        if ($latest_posts->have_posts()):
+          while ($latest_posts->have_posts()): $latest_posts->the_post(); ?>
+        <div class="timeline-item row no-gutters mb-4">
+          <div class="col-auto pr-3 text-center position-relative">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="col">
+            <div class="timeline-content">
+              <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <a href="<?php the_permalink(); ?>" class="news-title"><?php the_title(); ?></a>
+                <span class="news-date"><?php echo get_the_date('j F, Y'); ?></span>
+              </div>
+              <p class="mb-0"><?php echo wp_trim_words(get_the_excerpt(), 80, '...'); ?></p>
+            </div>
+          </div>
+        </div>
+        <?php endwhile;
+          wp_reset_postdata();
+        endif; ?>
+      </div>
+    </section>
   </div>
 </div>
 
