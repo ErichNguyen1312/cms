@@ -9,7 +9,7 @@
     <!-- ===== CỘT TRÁI: BÀI VIẾT NỔI BẬT ===== -->
     <aside class="col-md-3 mb-4">
       <div class="card featured-posts mb-4 border-0">
-        <div class="card-header bg-white font-weight-bold text-primary border-0">
+        <div class=" card-header bg-white font-weight-bold text-primary border-0" style="font-size: 2rem;">
           Bài viết nổi bật
         </div>
         <div class="card-body">
@@ -50,7 +50,7 @@
       <div class="search-results bg-white shadow-sm p-3 rounded text-center ">
 
         <?php if (have_posts()) : ?>
-        <h2 class="font-weight-bold">
+        <h2 class="font-weight-bold ">
           <span class="text-danger">Search:</span> "<?php echo get_search_query(); ?>"
         </h2>
         <?php while (have_posts()) : the_post(); ?>
@@ -70,15 +70,15 @@
           <!-- Date -->
           <div class="col-md-2 text-center date-block">
             <div class="date-inner bg-light rounded py-3">
-              <h4 class="mb-0 font-weight-bold text-primary"><?php echo get_the_date('d'); ?></h4>
-              <small class="text-uppercase text-muted">Tháng:<?php echo get_the_date('m'); ?></small>
+              <h4 class="mb-0 font-weight-bold text-secondary"><?php echo get_the_date('d'); ?></h4>
+              <small class="text-uppercase text-muted">Tháng <?php echo get_the_date('m'); ?></small>
             </div>
           </div>
 
           <!-- Post Info -->
           <div class="col-md-6 pl-3">
             <h6 class="font-weight-bold">
-              <a href="<?php the_permalink(); ?>" class="text-dark">
+              <a href="<?php the_permalink(); ?>" class="text-primary">
                 <?php the_title(); ?>
               </a>
             </h6>
@@ -95,13 +95,13 @@
 
         <!-- Không có kết quả -->
         <div class="not-found my-5">
-          <h4 class="font-weight-bold">
+          <h2 class="font-weight-bold">
             <span class="text-danger">Search:</span> "<?php echo get_search_query(); ?>"
-          </h4>
-          <p class="text-muted">
-            We could not find any results for your search. You can give it<br>
-            another try through the search form below.
-          </p>
+            </h4>
+            <p class="text-muted">
+              We could not find any results for your search. You can give it<br>
+              another try through the search form below.
+            </p>
         </div>
 
         <!-- Form tìm kiếm -->
@@ -132,7 +132,7 @@
     <!-- ===== CỘT PHẢI: BÌNH LUẬN ===== -->
     <aside class="col-md-3 mb-4">
       <div class="comment-widget p-3 shadow-sm bg-white rounded">
-        <h5 class="mb-3 font-weight-bold text-primary border-bottom pb-2">Bình luận mới nhất</h5>
+        <h2 class="mb-3 font-weight-bold text-primary border-bottom pb-2">Bình luận mới nhất</h2>
         <?php
         $recent_comments = get_comments(array(
           'number' => 3,

@@ -119,6 +119,7 @@ blockquote::after {
 .text-sm {
   font-size: 0.9rem;
 }
+
 /* footer custom */
 
 section {
@@ -305,7 +306,6 @@ section .section-title {
 }
 
 .date-block .date-inner {
-  border: 1px solid #e0e0e0;
   background: #f7f9fb;
   display: inline-block;
   width: 100%;
@@ -431,7 +431,9 @@ section .section-title {
 
 
 /* ===== SEARCH PAGE LAYOUT ===== */
-
+.title-notfound{
+	font-size: 2rem;
+}
 .search-page {
   font-family: "Segoe UI", sans-serif;
 }

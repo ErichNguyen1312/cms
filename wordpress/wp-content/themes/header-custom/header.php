@@ -11,11 +11,12 @@
 
   <header class="main-header shadow-sm bg-white mw-100">
     <div class="container-fluid"">
-      <nav class=" navbar navbar-expand-lg navbar-light py-2 ">
+      <nav class=" navbar navbar-expand-lg navbar-light py-2">
 
-        <!-- LOGO / SITE TITLE -->
-        <a class=" navbar-brand font-weight-bold text-dark title-lg" href="<?php echo home_url(); ?>">
-      <?php bloginfo('name'); ?>
+      <!-- LOGO / SITE TITLE -->
+      <a class=" navbar-brand font-weight-bold text-dark title-lg" style="font-size: 2rem;"
+        href="<?php echo home_url(); ?>">
+        <?php bloginfo('name'); ?>
       </a>
 
       <!-- Nút mở menu trên mobile -->
@@ -46,7 +47,8 @@
         <!-- ICONS -->
         <ul class="navbar-nav align-items-center">
           <li class="nav-item mr-3">
-            <a href="<?php echo home_url('/?s='); ?>" class="nav-link text-dark" title="Search">
+            <a href="<?php echo home_url('/?s=search something.....here'); ?>" class="nav-link text-dark"
+              title="Search">
               <i class="fas fa-search"></i>
               <span class="d-none d-lg-inline ml-1">Search</span>
             </a>
@@ -54,20 +56,20 @@
 
           <li class="nav-item dropdown">
             <?php if (is_user_logged_in()): ?>
-              <?php $current_user = wp_get_current_user(); ?>
-              <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">
-                <i class="fas fa-user-circle"></i>
-                <span class="d-none d-lg-inline ml-1"><?php echo esc_html($current_user->display_name); ?></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a href="<?php echo admin_url(); ?>" class="dropdown-item">Dashboard</a>
-                <a href="<?php echo wp_logout_url(home_url()); ?>" class="dropdown-item text-danger">Logout</a>
-              </div>
+            <?php $current_user = wp_get_current_user(); ?>
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">
+              <i class="fas fa-user-circle"></i>
+              <span class="d-none d-lg-inline ml-1"><?php echo esc_html($current_user->display_name); ?></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="<?php echo admin_url(); ?>" class="dropdown-item">Dashboard</a>
+              <a href="<?php echo wp_logout_url(home_url()); ?>" class="dropdown-item text-danger">Logout</a>
+            </div>
             <?php else: ?>
-              <a href="<?php echo wp_login_url(); ?>" class="nav-link text-dark">
-                <i class="fas fa-user-circle"></i>
-                <span class="d-none d-lg-inline ml-1">Account</span>
-              </a>
+            <a href="<?php echo wp_login_url(); ?>" class="nav-link text-dark">
+              <i class="fas fa-user-circle"></i>
+              <span class="d-none d-lg-inline ml-1">Account</span>
+            </a>
             <?php endif; ?>
           </li>
         </ul>
