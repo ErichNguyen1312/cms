@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Link CSS riêng cho trang single -->
-<div class="container-fluid my-5 single-content-post">
+<div class="container-wrapper container-fluid my-5 single-content-post ">
   <div class="row">
 
     <!-- SIDEBAR TRÁI (CATEGORIES) -->
@@ -122,19 +122,19 @@
                   <div class="row no-gutters align-items-center">
                     <!-- Cột trái: ngày & tháng -->
                     <div class="col-6 d-flex flex-column align-items-center">
-                      <div class="day font-weight-bold"><?php echo $date_day; ?></div>
-                      <div class="month small"><?php echo $date_month; ?></div>
+                      <div class="h4 day font-weight-bold"><?php echo $date_day; ?></div>
+                      <div class="h4 month small"><?php echo $date_month; ?></div>
                     </div>
                     <!-- Cột phải: năm -->
-                    <div class="col-6 d-flex align-items-center justify-content-center">
-                      <div class="year text-white-50"><?php echo $date_year; ?></div>
+                    <div class="col-6 d-flex align-items-center justify-content-left">
+                      <div class="h3 year text-white-50"><?php echo $date_year; ?></div>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- Cột phải: Title -->
               <div class="col-9">
-                <a href="<?php echo get_permalink($post['ID']); ?>" class="recent-link d-block text-white">
+                <a href="<?php echo get_permalink($post['ID']); ?>" class="h2 recent-link d-block text-white">
                   <?php echo esc_html($post['post_title']); ?>
                 </a>
               </div>
@@ -145,8 +145,8 @@
         </div>
 
         <!-- Xem tất cả -->
-        <div class="text-center mt-3 border-top pt-2">
-          <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"
+        <div class="text-center mt-3 border-top pt-2" style="font-size: 2rem;">
+          <a href=" <?php echo get_permalink(get_option('page_for_posts')); ?>"
             class="btn-view-all-news text-uppercase font-weight-bold text-white small">
             Xem tất cả tin tức
           </a>
