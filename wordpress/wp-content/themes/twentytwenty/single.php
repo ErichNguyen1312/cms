@@ -13,7 +13,7 @@
           $categories = get_categories();
           foreach ($categories as $cat) :
           ?>
-          <li><a href="<?php echo get_category_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></li>
+            <li><a href="<?php echo get_category_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></li>
           <?php endforeach; ?>
         </ul>
       </div>
@@ -22,23 +22,23 @@
     <!-- NỘI DUNG CHÍNH -->
     <main class="col-lg-6 col-md-8 mb-4">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <div class="single-wrapper">
-        <h1 class="single-title"><?php the_title(); ?></h1>
+          <div class="single-wrapper">
+            <h1 class="single-title"><?php the_title(); ?></h1>
 
-        <div class="single-date">
-          <div class="date-left">
-            <span><?php echo get_the_date('d'); ?></span>
-            <span><?php echo get_the_date('m'); ?></span>
-          </div>
-          <div class="date-right">
-            <span><?php echo get_the_date('y'); ?></span>
-          </div>
-        </div>
+            <div class="single-date">
+              <div class="date-left">
+                <span><?php echo get_the_date('d'); ?></span>
+                <span><?php echo get_the_date('m'); ?></span>
+              </div>
+              <div class="date-right">
+                <span><?php echo get_the_date('y'); ?></span>
+              </div>
+            </div>
 
-        <div class="single-content">
-          <?php the_content(); ?>
-        </div>
-      </div>
+            <div class="single-content">
+              <?php the_content(); ?>
+            </div>
+          </div>
       <?php endwhile;
       endif; ?>
 
@@ -52,37 +52,37 @@
               $next_post = get_next_post();
               if ($prev_post) :
               ?>
-              <li>
-                <div class="d-flex align-items-start">
-                  <div class="post-date mr-3">
-                    <span class="day"><?php echo get_the_date('d', $prev_post->ID); ?></span>
-                    <hr>
-                    <span class="month-year"><?php echo get_the_date('m-y', $prev_post->ID); ?></span>
+                <li>
+                  <div class="d-flex align-items-start">
+                    <div class="post-date mr-3">
+                      <span class="day"><?php echo get_the_date('d', $prev_post->ID); ?></span>
+                      <hr>
+                      <span class="month-year"><?php echo get_the_date('m-y', $prev_post->ID); ?></span>
+                    </div>
+                    <div class="post-title">
+                      <h5><a
+                          href="<?php echo get_permalink($prev_post->ID); ?>"><?php echo esc_html($prev_post->post_title); ?></a>
+                      </h5>
+                    </div>
                   </div>
-                  <div class="post-title">
-                    <h5><a
-                        href="<?php echo get_permalink($prev_post->ID); ?>"><?php echo esc_html($prev_post->post_title); ?></a>
-                    </h5>
-                  </div>
-                </div>
-              </li>
+                </li>
               <?php endif; ?>
 
               <?php if ($next_post) : ?>
-              <li>
-                <div class="d-flex align-items-start">
-                  <div class="post-date mr-3">
-                    <span class="day"><?php echo get_the_date('d', $next_post->ID); ?></span>
-                    <hr>
-                    <span class="month-year"><?php echo get_the_date('m-y', $next_post->ID); ?></span>
+                <li>
+                  <div class="d-flex align-items-start">
+                    <div class="post-date mr-3">
+                      <span class="day"><?php echo get_the_date('d', $next_post->ID); ?></span>
+                      <hr>
+                      <span class="month-year"><?php echo get_the_date('m-y', $next_post->ID); ?></span>
+                    </div>
+                    <div class="post-title">
+                      <h5><a
+                          href="<?php echo get_permalink($next_post->ID); ?>"><?php echo esc_html($next_post->post_title); ?></a>
+                      </h5>
+                    </div>
                   </div>
-                  <div class="post-title">
-                    <h5><a
-                        href="<?php echo get_permalink($next_post->ID); ?>"><?php echo esc_html($next_post->post_title); ?></a>
-                    </h5>
-                  </div>
-                </div>
-              </li>
+                </li>
               <?php endif; ?>
             </ul>
           </div>
@@ -114,32 +114,32 @@
               $date_month = get_the_date('m', $post['ID']);
               $date_year  = get_the_date('y', $post['ID']);
           ?>
-          <div class="list-group-item bg-transparent border-0 px-0 py-2">
-            <div class="row no-gutters align-items-center">
-              <!-- Cột trái: Date -->
-              <div class="col-3 text-center">
-                <div class="date-block py-2">
-                  <div class="row no-gutters align-items-center">
-                    <!-- Cột trái: ngày & tháng -->
-                    <div class="col-6 d-flex flex-column align-items-center">
-                      <div class="h4 day font-weight-bold"><?php echo $date_day; ?></div>
-                      <div class="h4 month small"><?php echo $date_month; ?></div>
+              <div class="list-group-item bg-transparent border-0 px-0 py-2">
+                <div class="row no-gutters align-items-center">
+                  <!-- Cột trái: Date -->
+                  <div class="col-3 text-center">
+                    <div class="date-block py-2">
+                      <div class="row no-gutters align-items-center">
+                        <!-- Cột trái: ngày & tháng -->
+                        <div class="col-6 d-flex flex-column align-items-center">
+                          <div class="h4 day font-weight-bold"><?php echo $date_day; ?></div>
+                          <div class="h4 month small"><?php echo $date_month; ?></div>
+                        </div>
+                        <!-- Cột phải: năm -->
+                        <div class="col-6 d-flex align-items-center justify-content-left">
+                          <div class="h3 year text-white-50"><?php echo $date_year; ?></div>
+                        </div>
+                      </div>
                     </div>
-                    <!-- Cột phải: năm -->
-                    <div class="col-6 d-flex align-items-center justify-content-left">
-                      <div class="h3 year text-white-50"><?php echo $date_year; ?></div>
-                    </div>
+                  </div>
+                  <!-- Cột phải: Title -->
+                  <div class="col-9">
+                    <a href="<?php echo get_permalink($post['ID']); ?>" class="h2 recent-link d-block text-white">
+                      <?php echo esc_html($post['post_title']); ?>
+                    </a>
                   </div>
                 </div>
               </div>
-              <!-- Cột phải: Title -->
-              <div class="col-9">
-                <a href="<?php echo get_permalink($post['ID']); ?>" class="h2 recent-link d-block text-white">
-                  <?php echo esc_html($post['post_title']); ?>
-                </a>
-              </div>
-            </div>
-          </div>
           <?php endforeach;
           endif; ?>
         </div>
@@ -155,6 +155,8 @@
     </aside>
 
   </div>
+
+
 </div>
 
 <?php get_footer(); ?>

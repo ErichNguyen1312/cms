@@ -52,3 +52,7 @@
     color: #343a40;
     border-bottom-style: solid;
 }
+
+.comment-content {
+	font-size: 1.8rem;
+}

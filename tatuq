@@ -1,0 +1,125 @@
+[33mcommit e2504fb314387cb1a7367fba58249b1bc13e9bbb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrecover-page[m[33m, [m[1;32mstage-test-UI[m[33m, [m[1;32mfix-comment-layout-issue-3col[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Mon Oct 20 13:33:36 2025 +0700
+
+     fix container width
+
+[33mcommit 4917412f93f0086b8515af6bf39c3fc8d59ea71d[m[33m ([m[1;31morigin/trang-danh-sach-tim-kiem[m[33m, [m[1;32mtrang-danh-sach-tim-kiem[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Fri Oct 17 08:29:27 2025 +0700
+
+    update ui v1.3
+
+[33mcommit 516b0a3f2a7c63bdd5b03edc9b4f020cc96df817[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Fri Oct 17 07:13:00 2025 +0700
+
+    update ui v1.2
+
+[33mcommit 661de0310833aa2e0b06a251275493d9fbab0c53[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Thu Oct 16 23:29:56 2025 +0700
+
+    update ui
+
+[33mcommit 2263e900a7e11fa2d6214baefc77d2b3d8f70fef[m[33m ([m[1;31morigin/15-last-post[m[33m, [m[1;32m15-last-post[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Thu Oct 16 17:21:20 2025 +0700
+
+    update ui 15-last posts
+
+[33mcommit f77330edc6e393e9b62cb827c1527d0d262c4b42[m[33m ([m[1;31morigin/13-pages[m[33m, [m[1;32m13-pages[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Thu Oct 16 16:00:35 2025 +0700
+
+     update ui 13-page
+
+[33mcommit e8b1f284bd1c12ad03e3923faf2c90a6a8c0abbb[m[33m ([m[1;31morigin/trang-chi-tiet-ui[m[33m, [m[1;32mtrang-chi-tiet-ui[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Wed Oct 15 10:50:22 2025 +0700
+
+    update ui v1
+
+[33mcommit c1297345bee060d820fd899c9a5d3d8a05327ef0[m[33m ([m[1;31morigin/comment[m[33m, [m[1;32mcomment[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Wed Oct 15 08:06:07 2025 +0700
+
+    update ui module comment v1
+
+[33mcommit 8de704c0e20b3174a923300275787b070c29872d[m[33m ([m[1;31morigin/pre-post[m[33m, [m[1;32mpre-post[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Tue Oct 14 17:11:08 2025 +0700
+
+    update ui pre-post v1
+
+[33mcommit ebe9c4aacd48de890f48ab9765575335366f569c[m[33m ([m[1;31morigin/detail[m[33m, [m[1;32mdetail[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Tue Oct 14 04:28:57 2025 +0700
+
+    update detail post v1
+
+[33mcommit 509903c06686a9239901fbd7ee0b4a8094ed905c[m[33m ([m[1;31morigin/search[m[33m, [m[1;32msearch[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Tue Oct 14 04:17:36 2025 +0700
+
+    search UI v1
+
+[33mcommit 8c694214d1b8bbeb9a105e0f3adc066a605cc7d2[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Sun Oct 12 22:54:00 2025 +0700
+
+    remove unused theme
+
+[33mcommit 0c1ff2748fb7c3e6a34157c8e08eef76f4c64921[m[33m ([m[1;31morigin/header[m[33m, [m[1;32mheader[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Sun Oct 12 11:13:55 2025 +0700
+
+    header v1
+
+[33mcommit 63fa716441bec6f182b44d9c4d0acefe9d6e9ac2[m[33m ([m[1;31morigin/post-layout[m[33m, [m[1;32mpost-layout[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Wed Oct 8 11:13:10 2025 +0700
+
+    update layout post v3
+
+[33mcommit 1e1b9f97e86876a35e2ada77f809e33b29991853[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Wed Oct 8 07:19:26 2025 +0700
+
+    update database sql file
+
+[33mcommit 7f85103a3df096ba3d4e139cf329d03633d89dd9[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Wed Oct 8 07:18:31 2025 +0700
+
+    update layout
+
+[33mcommit a94dc43cadf2a2fdb531c9bb23e5dfb4c4006355[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Tue Oct 7 17:40:27 2025 +0700
+
+    add html layout
+
+[33mcommit 8daacc75e896e0b3d6152c4de7a9d074e8271715[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Fri Oct 3 17:33:17 2025 +0700
+
+    update file database
+
+[33mcommit fa20f341a91949fc7da1bed23136ddf9ac5cf3ea[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Fri Oct 3 17:29:54 2025 +0700
+
+    blog layout v1
+
+[33mcommit 73f1512e503fa2aaeb51b1274b3b16763fa9e07f[m[33m ([m[1;31morigin/footer[m[33m, [m[1;32mfooter[m[33m)[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Fri Oct 3 13:33:44 2025 +0700
+
+    fix footer v2
+
+[33mcommit 7a057de3e96a6bfc1a0a9ec1a1b87ddb7a053e53[m
+Author: ErichNguyen1312 <vinhnguyenfit1312@gmail.com>
+Date:   Thu Oct 2 13:10:22 2025 +0700
+
+    init project cms

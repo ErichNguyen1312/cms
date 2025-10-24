@@ -12,9 +12,9 @@ if (post_password_required()) {
 
 <div id="comments" class="comments-area">
 
-	<?php if (have_comments()) : ?>
-		<h2 class="comments-title">
-			<?php
+  <?php if (have_comments()) : ?>
+  <h2 class="comments-title">
+    <?php
 			$comment_count = get_comments_number();
 			if ('1' === $comment_count) {
 				esc_html_e('One comment', 'your-theme-domain');
@@ -25,12 +25,12 @@ if (post_password_required()) {
 				);
 			}
 			?>
-		</h2>
+  </h2>
 
-		<?php if (have_posts()) : ?>
+  <?php if (have_posts()) : ?>
 
-			<ol class="comment-list">
-				<?php
+  <ol class="comment-list">
+    <?php
 				wp_list_comments(array(
 					'style'       => 'ol',
 					'short_ping'  => true,
@@ -38,30 +38,30 @@ if (post_password_required()) {
 					'callback'    => 'my_custom_comment_format',
 				));
 				?>
-			</ol>
+  </ol>
 
-		<?php endif;  ?>
+  <?php endif;  ?>
 
-		<?php
+  <?php
 		the_comments_navigation();
 
 		if (! comments_open()) :
 		?>
-			<p class="no-comments"><?php esc_html_e('Comments are closed.', 'your-theme-domain'); ?></p>
-	<?php
+  <p class="no-comments"><?php esc_html_e('Comments are closed.', 'your-theme-domain'); ?></p>
+  <?php
 		endif;
 
 	endif;
 	?>
 
 
-	<?php
+  <?php
 
 	if (comments_open()) {
 		if (is_user_logged_in()) {
 			comment_form();
 		} else {
-			echo '<div class="must-log-in-to-comment alert alert-info mt-4">';
+			echo '<div class="must-log-in-to-comment alert alert-info mt-4 must-login-form">';
 			printf(
 				wp_kses(
 					__('You must be <a href="%s">logged in</a> to post a comment.', 'your-theme-domain'),
